@@ -46,7 +46,6 @@
 								.addClass('is-article-visible');
 
 						// Show article.
-							setTimeout(function() {
 
 								// Hide header, footer.
 									$header.hide();
@@ -61,19 +60,8 @@
 
 										$article.addClass('active');
 
-										// Window stuff.
-											$window
-												.scrollTop(0)
-												.triggerHandler('resize.flexbox-fix');
-
-										// Unlock.
-											setTimeout(function() {
-												locked = false;
-											}, delay);
-
 									}, 25);
 
-							}, delay);
 
 					}
 
@@ -110,20 +98,9 @@
 							$footer.show();
 							$header.show();
 
-						// Unmark as visible.
 							setTimeout(function() {
 
 								$body.removeClass('is-article-visible');
-
-								// Window stuff.
-									$window
-										.scrollTop(0)
-										.triggerHandler('resize.flexbox-fix');
-
-								// Unlock.
-									setTimeout(function() {
-										locked = false;
-									}, delay);
 
 							}, 25);
 
