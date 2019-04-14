@@ -6,4 +6,5 @@ function executeTransaction(){
             }, (res) => {
                 console.log('res', res)
             });
+	return 1;
 }
