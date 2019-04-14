@@ -31,39 +31,14 @@
 			}, 100);
 		});
 
-	// Fix: Flexbox min-height bug on IE.
-		if (browser.name == 'ie') {
-
-			var flexboxFixTimeoutId;
-
-			$window.on('resize.flexbox-fix', function() {
-
-				clearTimeout(flexboxFixTimeoutId);
-
-				flexboxFixTimeoutId = setTimeout(function() {
-
-					if ($wrapper.prop('scrollHeight') > $window.height())
-						$wrapper.css('height', 'auto');
-					else
-						$wrapper.css('height', '100vh');
-
-				}, 250);
-
-			}).triggerHandler('resize.flexbox-fix');
-
-		}
 
 	// Nav.
 		var $nav = $header.children('nav'),
 			$nav_li = $nav.find('li');
 
 		// Add "middle" alignment classes if we're dealing with an even number of items.
-			if ($nav_li.length % 2 == 0) {
 
-				$nav.addClass('use-middle');
-				$nav_li.eq( ($nav_li.length / 2) ).addClass('is-middle');
 
-			}
 
 	// Main.
 		var	delay = 325,
@@ -285,7 +260,6 @@
 
 
 			};
-
 		// Articles.
 			$main_articles.each(function() {
 
@@ -384,7 +358,6 @@
 					});
 
 			}
-
 		// Initialize.
 
 			// Hide main, articles.
